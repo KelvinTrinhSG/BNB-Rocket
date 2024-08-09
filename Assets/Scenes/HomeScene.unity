@@ -361,6 +361,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79f8c31ebfcbdb42bc6b418fcb1f886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playBtn: {fileID: 1006875347}
+  PlayBtnText: {fileID: 1943339464}
+  nftBtn: {fileID: 2012296892}
+  NFTBtnText: {fileID: 1495257028}
+  rocketBtn: {fileID: 1090722611}
+  rocketBtnText: {fileID: 678132204}
+  rocketImage: {fileID: 1618307292}
+  sprite1: {fileID: 21300000, guid: c930c30ae1c540d4ab06843d95d6dfb5, type: 3}
+  sprite2: {fileID: 21300000, guid: 72dc7867e9ac1e44ba5a5f6900a52c7a, type: 3}
+  sprite3: {fileID: 21300000, guid: 4a88fd22d2e802f45ae4e906a38a8bb2, type: 3}
 --- !u!4 &659522324
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +398,7 @@ GameObject:
   - component: {fileID: 678132205}
   - component: {fileID: 678132204}
   m_Layer: 5
-  m_Name: RocketText
+  m_Name: rocketBtnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,7 +757,7 @@ GameObject:
   - component: {fileID: 1006875348}
   - component: {fileID: 1006875347}
   m_Layer: 5
-  m_Name: Play
+  m_Name: playBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,9 +827,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162117284}
-        m_TargetAssemblyTypeName: Event, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 659522323}
+        m_TargetAssemblyTypeName: BlockchainManager, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -880,7 +890,7 @@ GameObject:
   - component: {fileID: 1090722612}
   - component: {fileID: 1090722611}
   m_Layer: 5
-  m_Name: Rocket
+  m_Name: rocketBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,9 +960,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162117284}
-        m_TargetAssemblyTypeName: Event, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 659522323}
+        m_TargetAssemblyTypeName: BlockchainManager, Assembly-CSharp
+        m_MethodName: ChooseRocket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1000,6 +1010,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090722609}
   m_CullTransparentMesh: 1
+--- !u!1 &1125004611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125004612}
+  - component: {fileID: 1125004613}
+  m_Layer: 0
+  m_Name: RocketChosen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125004612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125004611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125004613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125004611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34caf946b230c0649b412f0c21b7135d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chosenRocket: 1
 --- !u!1 &1355137325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1698,34 @@ PrefabInstance:
       propertyPath: enabledWalletProviders.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 659522323}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: HaveGamePass
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: BlockchainManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458216348175956803, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
+      propertyPath: onConnected.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7751525179127478473, guid: 897cda79fe3077c4fbc0fb5916d433ee, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1868,7 +1951,7 @@ GameObject:
   - component: {fileID: 1618307293}
   - component: {fileID: 1618307292}
   m_Layer: 0
-  m_Name: pngwing.com
+  m_Name: RocketImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +2036,7 @@ GameObject:
   - component: {fileID: 1943339465}
   - component: {fileID: 1943339464}
   m_Layer: 5
-  m_Name: PlayText
+  m_Name: PlayBtnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2177,7 +2260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012296893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659522323}
+        m_TargetAssemblyTypeName: BlockchainManager, Assembly-CSharp
+        m_MethodName: ClaimGamePass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2012296893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2362,3 +2457,4 @@ SceneRoots:
   - {fileID: 897680595}
   - {fileID: 1417663633}
   - {fileID: 659522324}
+  - {fileID: 1125004612}
